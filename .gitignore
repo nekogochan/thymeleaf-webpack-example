@@ -31,3 +31,10 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### Frontend ###
+**/node
+**/node_modules
+**/package-lock.json
+**/tempaltes/generated/
+**/static/dist
