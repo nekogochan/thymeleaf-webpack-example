@@ -78,19 +78,5 @@
                 </div>
             </div>
         </div>
-
-        <th:block layout:fragment="scripts">
-            <script type="text/javascript">
-                $(document).ready(function () {
-                    const modal = document.getElementById('deleteConfirmModal');
-                    modal.addEventListener('show.bs.modal', function (event) {
-                        const button = event.relatedTarget;
-                        const href = button.getAttribute('data-bs-href');
-                        const modalDeleteButton = modal.querySelector('a');
-                        modalDeleteButton.href = href;
-                    });
-                });
-            </script>
-        </th:block>
     </body>
 </html>

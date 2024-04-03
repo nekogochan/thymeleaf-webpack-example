@@ -35,7 +35,8 @@ module.exports = (env) => {
                             corejs: "3.36.1"
                         }
                     ]
-                ]
+                ],
+                cacheDirectory: true
             }
         }
     }
