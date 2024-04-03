@@ -1,0 +1,24 @@
+{
+  "name": "spring-thymeleaf-crud-example",
+  "version": "0.0.1",
+  "description": "",
+  "scripts": {
+    "build": "webpack"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "5.15.3",
+    "bootstrap": "5.0.2",
+    "jquery": "3.6.0",
+    "jquery-mask-plugin": "1.14.16"
+  },
+  "devDependencies": {
+    "glob": "^10.3.12",
+    "html-webpack-plugin": "^5.6.0",
+    "style-loader": "^3.3.4",
+    "webpack": "^5.91.0",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.0.4"
+  }
+}

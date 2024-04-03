@@ -40,7 +40,7 @@ public class Address {
 
     @PrePersist
     private void prePersist() {
-        this.id = UUID.randomUUID().toString();
+        this.id = id != null ? id : UUID.randomUUID().toString();
         this.createdAt = LocalDateTime.now();
     }
 

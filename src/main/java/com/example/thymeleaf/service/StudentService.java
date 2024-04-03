@@ -1,11 +1,15 @@
 package com.example.thymeleaf.service;
 
+import com.example.thymeleaf.entity.Address;
 import com.example.thymeleaf.entity.Student;
 import com.example.thymeleaf.repository.AddressRepository;
 import com.example.thymeleaf.repository.StudentRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.beans.BeanUtils;
 import org.springframework.stereotype.Service;
+
+import javax.annotation.PostConstruct;
+import java.time.LocalDate;
 
 @Service
 @AllArgsConstructor
@@ -35,4 +39,27 @@ public class StudentService {
         this.studentRepository.delete(this.findById(id));
     }
 
+    @PostConstruct
+    public void init() {
+        var student = new Student();
+        student.setId("1");
+        student.setName("1");
+        student.setEmail("1'");
+        student.setBirthday(LocalDate.now());
+
+        var address = new Address();
+        address.setId("1");
+        address.setZipCode("1");
+        address.setStreet("1");
+        address.setNumber("1");
+        address.setComplement("1");
+        address.setDistrict("1");
+        address.setCity("1");
+        address.setState("1");
+        student.setAddress(address);
+        address.setStudent(student);
+
+        save(student);
+        addressRepository.save(address);
+    }
 }
