@@ -23,11 +23,25 @@ module.exports = (env) => {
             }
         },
         postCss: "postcss-loader",
-        miniCssExtract: MiniCssExtractPlugin.loader
+        miniCssExtract: MiniCssExtractPlugin.loader,
+        babel: {
+            loader: "babel-loader",
+            options: {
+                presets: [
+                    [
+                        "@babel/preset-env",
+                        {
+                            useBuiltIns: "entry",
+                            corejs: "3.36.1"
+                        }
+                    ]
+                ]
+            }
+        }
     }
 
     return {
-        mode: "development",
+        mode: "production",
         entry: entries,
         output: {
             filename: "[id].js",
@@ -63,7 +77,13 @@ module.exports = (env) => {
                         loaders.postCss,
                         loaders.sass
                     ]
-                }
+                },
+                {
+                    test: /\.js$/,
+                    use: [
+                        loaders.babel
+                    ]
+                },
             ]
         }
     };
