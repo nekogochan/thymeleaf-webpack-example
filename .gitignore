@@ -36,5 +36,5 @@ build/
 **/node
 **/node_modules
 **/package-lock.json
-**/tempaltes/generated/
+**/templates/generated/
 **/static/dist
